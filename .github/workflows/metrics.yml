@@ -1,29 +1,19 @@
-# GitHub Metrics Generator Workflow
-# Redesigned for Sashank's Premium Profile
+# GitHub Metrics Generator Workflow (Redesigned & Optimized)
 #
-# This Action runs every 12 hours to compile comprehensive developer metrics.
-# It outputs an SVG graphic to `.github/profile/github-metrics.svg`.
+# This workflow is optimized to build an elegant, high-impact, and minimal
+# developer dashboard styled after Vercel and Stripe.
 #
-# IMPORTANT SETUP:
-# To make this workflow function, you must generate a Personal Access Token (PAT) with:
-# - repo (all scopes)
-# - read:user
-# - read:org
-#
-# Add this token as a Repository Secret in this repository:
-# Settings -> Secrets and variables -> Actions -> New repository secret
-# Name: METRICS_TOKEN
-# Value: <your_personal_access_token>
+# - Disabled all error-prone plugins (achievements, habits, activity, followup)
+# - Disabled the redundant header and repository meta lists (base: "")
+# - Included custom dark mode CSS overrides and a matching #090909 background
+# - Optimized API payload limits to prevent timeouts and speed up commits
 
 name: GitHub Metrics
 
 on:
-  # Schedule: Run every 12 hours (at 00:00 and 12:00 UTC)
   schedule:
     - cron: "0 */12 * * *"
-  # Allow manual execution via the Actions tab
   workflow_dispatch:
-  # Trigger on pushes to main branch
   push:
     branches:
       - main
@@ -38,63 +28,68 @@ jobs:
       - name: Generate Developer Metrics
         uses: lowlighter/metrics@latest
         with:
-          # Personal Access Token with read permissions
           token: ${{ secrets.METRICS_TOKEN }}
-          
-          # Target profile username
           user: sashank321
-          
-          # General settings
           template: classic
-          base: header, activity, community, repositories, metadata
           config_timezone: Asia/Kolkata
-          
-          # Target file path inside the main branch
           filename: .github/profile/github-metrics.svg
           
-          # Output options
-          config_order: base.header, base.activity, languages, calendar, habits, followup, achievements, code, stars
+          # Clean architecture: Disable base info entirely to act as a custom widget
+          base: ""
           
-          # Plugin: Languages (Displays top languages used)
+          # Visual settings
+          config_background: "#090909"
+          config_padding: 8%
+          
+          # 1. Plugin: Languages (Displays top languages used)
           plugin_languages: yes
           plugin_languages_colors: github
           plugin_languages_limit: 8
-          plugin_languages_recent_days: 14
-          plugin_languages_recent_load: 300
           plugin_languages_sections: most-used
-          plugin_languages_details: percentage, lines
+          plugin_languages_details: percentage
+          # Optimization: Limit scanning to 150 recent events / 30 days to speed up generation
+          plugin_languages_recent_load: 150
+          plugin_languages_recent_days: 30
           
-          # Plugin: Contribution Calendar (Activity grid)
+          # 2. Plugin: Contribution Calendar (Activity grid)
           plugin_calendar: yes
           plugin_calendar_limit: 1
           
-          # Plugin: Coding Habits (Provides timezone-aware habits)
-          plugin_habits: yes
-          plugin_habits_from: 200
-          plugin_habits_days: 14
-          plugin_habits_facts: yes
-          plugin_habits_charts: yes
+          # 3. Plugin: Lines of code (displays total commits & lines of code changed)
+          plugin_lines: yes
           
-          # Plugin: Achievements (Displays earned GitHub badges)
-          plugin_achievements: yes
-          plugin_achievements_secrets: yes
-          plugin_achievements_threshold: C
-          
-          # Plugin: Stars (Displays recently starred repositories)
-          plugin_stars: yes
-          plugin_stars_limit: 4
-          
-          # Plugin: Recent Activity (List of recent commits, PRs, etc.)
-          plugin_activity: yes
-          plugin_activity_limit: 5
-          plugin_activity_days: 14
-          plugin_activity_filter: all
-          
-          # Plugin: Follow-up statistics (Issues & Pull Request ratios)
-          plugin_followup: yes
-          plugin_followup_sections: user
-          
-          # Plugin: Code Snippets (Highlights of recent notable code)
-          plugin_code: yes
-          plugin_code_lines: 12
-          plugin_code_load: 400
+          # Custom Styling to enforce Apple/Linear/Vercel aesthetics
+          extra_css: |
+            svg {
+              background: #090909 !important;
+              border: 1px solid #1f1f23 !important;
+              border-radius: 12px !important;
+            }
+            h2, h3 {
+              font-family: -apple-system, BlinkMacSystemFont, "Geist", "Inter", "Segoe UI", sans-serif !important;
+              color: #ffffff !important;
+              font-weight: 600 !important;
+              letter-spacing: -0.02em !important;
+              border-bottom: none !important;
+              padding-bottom: 0 !important;
+              margin-bottom: 12px !important;
+            }
+            .field {
+              font-family: -apple-system, BlinkMacSystemFont, "Geist", "Inter", "Segoe UI", sans-serif !important;
+              color: #a1a1aa !important;
+              font-size: 13px !important;
+            }
+            .field svg {
+              fill: #71717a !important;
+              margin-right: 10px !important;
+            }
+            .calendar .day {
+              outline: 1px solid #141416 !important;
+            }
+            footer {
+              font-family: -apple-system, BlinkMacSystemFont, "Geist", "Inter", sans-serif !important;
+              color: #3f3f46 !important;
+              border-top: 1px solid #1f1f23 !important;
+              padding-top: 8px !important;
+              margin-top: 16px !important;
+            }
