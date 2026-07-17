@@ -1,0 +1,7 @@
+# Issue template configuration
+# Redirects general queries to LinkedIn while keeping issues open for repositories.
+blank_issues_enabled: true
+contact_links:
+  - name: Project Collaboration & Networking
+    url: https://www.linkedin.com/in/sashank-junnuru-63a4b8395/
+    about: Reach out directly on LinkedIn for career opportunities, collaboration, or feedback.

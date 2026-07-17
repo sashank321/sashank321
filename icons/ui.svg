@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4d4d8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Main Artboard/Browser Frame -->
+  <rect x="2" y="3" width="20" height="18" rx="2" />
+  
+  <!-- Header Bar -->
+  <line x1="2" y1="8" x2="22" y2="8" />
+  
+  <!-- UI Circles (Close/Minimize/Maximize) -->
+  <circle cx="5" cy="5.5" r="0.75" fill="#d4d4d8" />
+  <circle cx="8" cy="5.5" r="0.75" fill="#d4d4d8" />
+  <circle cx="11" cy="5.5" r="0.75" fill="#d4d4d8" />
+  
+  <!-- Layout Content -->
+  <!-- Sidebar -->
+  <line x1="7" y1="8" x2="7" y2="21" />
+  
+  <!-- Content Cards -->
+  <rect x="9" y="10" width="11" height="4" rx="1" opacity="0.6" />
+  <rect x="9" y="16" width="5" height="3" rx="1" opacity="0.6" />
+  <rect x="16" y="16" width="4" height="3" rx="1" opacity="0.6" />
+</svg>

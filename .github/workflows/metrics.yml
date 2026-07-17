@@ -1,0 +1,100 @@
+# GitHub Metrics Generator Workflow
+# Redesigned for Sashank's Premium Profile
+#
+# This Action runs every 12 hours to compile comprehensive developer metrics.
+# It outputs an SVG graphic to `.github/profile/github-metrics.svg`.
+#
+# IMPORTANT SETUP:
+# To make this workflow function, you must generate a Personal Access Token (PAT) with:
+# - repo (all scopes)
+# - read:user
+# - read:org
+#
+# Add this token as a Repository Secret in this repository:
+# Settings -> Secrets and variables -> Actions -> New repository secret
+# Name: METRICS_TOKEN
+# Value: <your_personal_access_token>
+
+name: GitHub Metrics
+
+on:
+  # Schedule: Run every 12 hours (at 00:00 and 12:00 UTC)
+  schedule:
+    - cron: "0 */12 * * *"
+  # Allow manual execution via the Actions tab
+  workflow_dispatch:
+  # Trigger on pushes to main branch
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Generate Developer Metrics
+        uses: lowlighter/metrics@latest
+        with:
+          # Personal Access Token with read permissions
+          token: ${{ secrets.METRICS_TOKEN }}
+          
+          # Target profile username
+          user: sashank321
+          
+          # General settings
+          template: classic
+          base: header, activity, community, repositories, metadata
+          config_timezone: Asia/Kolkata
+          
+          # Target file path inside the main branch
+          filename: .github/profile/github-metrics.svg
+          
+          # Output options
+          config_order: base.header, base.activity, languages, calendar, habits, followup, achievements, code, stars
+          
+          # Plugin: Languages (Displays top languages used)
+          plugin_languages: yes
+          plugin_languages_colors: github
+          plugin_languages_limit: 8
+          plugin_languages_recent_days: 14
+          plugin_languages_recent_load: 300
+          plugin_languages_sections: most-used
+          plugin_languages_details: percentage, lines
+          
+          # Plugin: Contribution Calendar (Activity grid)
+          plugin_calendar: yes
+          plugin_calendar_limit: 1
+          
+          # Plugin: Coding Habits (Provides timezone-aware habits)
+          plugin_habits: yes
+          plugin_habits_from: 200
+          plugin_habits_days: 14
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+          
+          # Plugin: Achievements (Displays earned GitHub badges)
+          plugin_achievements: yes
+          plugin_achievements_secrets: yes
+          plugin_achievements_threshold: C
+          
+          # Plugin: Stars (Displays recently starred repositories)
+          plugin_stars: yes
+          plugin_stars_limit: 4
+          
+          # Plugin: Recent Activity (List of recent commits, PRs, etc.)
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 14
+          plugin_activity_filter: all
+          
+          # Plugin: Follow-up statistics (Issues & Pull Request ratios)
+          plugin_followup: yes
+          plugin_followup_sections: user
+          
+          # Plugin: Code Snippets (Highlights of recent notable code)
+          plugin_code: yes
+          plugin_code_lines: 12
+          plugin_code_load: 400

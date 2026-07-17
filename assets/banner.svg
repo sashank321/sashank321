@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="100%" height="100%">
+  <defs>
+    <!-- Background Grid Pattern -->
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#161616" stroke-width="0.75" />
+    </pattern>
+
+    <!-- Radial Glow and Gradient Elements -->
+    <radialGradient id="glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#1c1c1e" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#090909" stop-opacity="0"/>
+    </radialGradient>
+    
+    <radialGradient id="spotlight" cx="50%" cy="0%" r="50%">
+      <stop offset="0%" stop-color="#2a2a2a" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#090909" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Grain/Noise Filter -->
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch" result="noise" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.035 0" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+
+    <style>
+      .title {
+        font-family: -apple-system, BlinkMacSystemFont, "Geist", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        font-size: 44px;
+        fill: #ffffff;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+      }
+      .subtitle {
+        font-family: -apple-system, BlinkMacSystemFont, "Geist", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        fill: #a1a1aa;
+        letter-spacing: 0.05em;
+      }
+      .tech-tags {
+        font-family: -apple-system, BlinkMacSystemFont, "Geist", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        font-size: 11px;
+        fill: #d4d4d8;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+      }
+      .line {
+        stroke: #27272a;
+        stroke-width: 0.5;
+        stroke-dasharray: 4 4;
+      }
+      .solid-line {
+        stroke: #27272a;
+        stroke-width: 0.5;
+      }
+      .circle {
+        fill: none;
+        stroke: #27272a;
+        stroke-width: 0.5;
+        opacity: 0.4;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="100%" height="100%" fill="#090909" />
+
+  <!-- Radial Glows -->
+  <rect width="100%" height="100%" fill="url(#glow)" />
+  <rect width="100%" height="100%" fill="url(#spotlight)" />
+
+  <!-- Grid Overlay -->
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- Abstract Geometric Elements -->
+  <!-- Concentric Circles in Background -->
+  <circle cx="450" cy="150" r="140" class="circle" stroke-dasharray="2 6" />
+  <circle cx="450" cy="150" r="220" class="circle" />
+  
+  <!-- Subtle Angle Lines (Linear/Apple style) -->
+  <line x1="0" y1="60" x2="900" y2="60" class="solid-line" opacity="0.3" />
+  <line x1="0" y1="240" x2="900" y2="240" class="solid-line" opacity="0.3" />
+  
+  <!-- Vertical Framing Lines -->
+  <line x1="150" y1="0" x2="150" y2="300" class="line" opacity="0.5" />
+  <line x1="750" y1="0" x2="750" y2="300" class="line" opacity="0.5" />
+
+  <!-- Center Decorative Crosshairs -->
+  <path d="M 440 150 L 460 150 M 450 140 L 450 160" stroke="#d4d4d8" stroke-width="0.75" opacity="0.2" />
+
+  <!-- Typographic Content (Centered) -->
+  <text x="454" y="125" text-anchor="middle" class="title">Sashank</text>
+  <text x="450" y="165" text-anchor="middle" class="subtitle">Building software with intention.</text>
+  <text x="451" y="205" text-anchor="middle" class="tech-tags">Java • React • AI • ML</text>
+
+  <!-- Noise Texture Layer (Applied on top) -->
+  <rect width="100%" height="100%" filter="url(#noise)" pointer-events="none" />
+</svg>

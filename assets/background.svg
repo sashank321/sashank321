@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%" height="100%">
+  <defs>
+    <!-- Background Grid -->
+    <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#141414" stroke-width="0.75" />
+    </pattern>
+
+    <!-- Glowing Highlights -->
+    <radialGradient id="glow-center" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2a2a2d" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#121212" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#090909" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glow-accent" cx="70%" cy="30%" r="40%">
+      <stop offset="0%" stop-color="#3f3f46" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#090909" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Grain Filter -->
+    <filter id="grain-filter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.03 0" />
+    </filter>
+
+    <style>
+      .geo-line {
+        fill: none;
+        stroke: #27272a;
+        stroke-width: 0.5;
+      }
+      .geo-accent {
+        fill: none;
+        stroke: #52525b;
+        stroke-width: 0.75;
+        stroke-dasharray: 5 5;
+      }
+      .glow-node {
+        fill: #ffffff;
+        opacity: 0.15;
+      }
+    </style>
+  </defs>
+
+  <!-- Deep Dark Base -->
+  <rect width="100%" height="100%" fill="#090909" />
+
+  <!-- Ambient Light -->
+  <rect width="100%" height="100%" fill="url(#glow-center)" />
+  <rect width="100%" height="100%" fill="url(#glow-accent)" />
+
+  <!-- Grid -->
+  <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+
+  <!-- Geometric Abstract Shapes -->
+  <g opacity="0.6">
+    <!-- Huge Orbiting Circles -->
+    <circle cx="600" cy="300" r="280" class="geo-line" />
+    <circle cx="600" cy="300" r="282" class="geo-accent" />
+    <circle cx="600" cy="300" r="150" class="geo-line" />
+    
+    <!-- Cross Axes -->
+    <line x1="100" y1="300" x2="1100" y2="300" class="geo-line" />
+    <line x1="600" y1="50" x2="600" y2="550" class="geo-line" />
+
+    <!-- Diagonal Rays -->
+    <line x1="200" y1="100" x2="1000" y2="500" class="geo-line" />
+    <line x1="200" y1="500" x2="1000" y2="100" class="geo-line" />
+
+    <!-- Concentric Ring Nodes -->
+    <circle cx="600" cy="300" r="6" fill="#ffffff" opacity="0.1" />
+    <circle cx="600" cy="20" r="3" class="glow-node" />
+    <circle cx="600" cy="580" r="3" class="glow-node" />
+    <circle cx="40" cy="300" r="3" class="glow-node" />
+    <circle cx="1160" cy="300" r="3" class="glow-node" />
+    
+    <!-- Outer Decagon or Polygon Points -->
+    <polygon points="600,80 820,150 910,300 820,450 600,520 380,450 290,300 380,150" class="geo-line" stroke-dasharray="3 9" />
+  </g>
+
+  <!-- Noise Overlay -->
+  <rect width="100%" height="100%" filter="url(#grain-filter)" pointer-events="none" />
+</svg>
