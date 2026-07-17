@@ -15,7 +15,7 @@
 <div align="center">
   <h2>✦ About ✦</h2>
   <p>
-    I am a Computer Science Engineering student at <b>KL University</b>, currently maintaining a <b>9.57 CGPA</b>.
+    I am a Computer Science Engineering student at <b>KL University</b>, currently maintaining a <b>9.72 CGPA</b>.
   </p>
   <p>
     My work sits at the intersection of high-performance backend systems, analytical machine learning, and clean UI engineering. I believe software should be built with intention, valuing speed, typography, and human-centric design.
