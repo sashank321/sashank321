@@ -13,7 +13,7 @@
 <br>
 
 <div align="center">
-  <h2>✦ About ✦</h2>
+  <h2> About </h2>
   <p>
     I am a Computer Science Engineering student at <b>KL University</b>, currently maintaining a <b>9.72 CGPA</b>.
   </p>
@@ -89,19 +89,19 @@
   <h2>✦ Currently Building ✦</h2>
   <table border="0" cellpadding="6" cellspacing="0">
     <tr>
-      <td>⚡</td>
+      <td></td>
       <td align="left"><b>Portfolio Website</b> — High-fidelity client architecture &amp; scroll choreographed interactions.</td>
     </tr>
     <tr>
-      <td>🤖</td>
+      <td></td>
       <td align="left"><b>AI Projects</b> — Training, evaluating, and serving predictive models.</td>
     </tr>
     <tr>
-      <td>🌐</td>
+      <td></td>
       <td align="left"><b>Full Stack Services</b> — Modern, stateless web services built on Express &amp; React.</td>
     </tr>
     <tr>
-      <td>📚</td>
+      <td></td>
       <td align="left"><b>Algorithms</b> — Optimized, native Java implementations of core structures.</td>
     </tr>
   </table>
@@ -120,7 +120,7 @@
   <table width="100%" border="0" cellpadding="10" cellspacing="0">
     <tr>
       <td width="50%" valign="top" style="border: 1px solid #222222; border-radius: 8px; background-color: #111111;">
-        <h3>📂 Portfolio Website</h3>
+        <h3>Portfolio Website</h3>
         <p><font color="#a1a1aa">An editorial portfolio inspired by Apple, Linear, and Vercel. Features bespoke scroll choreography, custom typography, and web page transitions.</font></p>
         <p>
           <a href="https://github.com/sashank321/portfolio"><code>Code</code></a> &nbsp;•&nbsp;
@@ -129,7 +129,7 @@
         </p>
       </td>
       <td width="50%" valign="top" style="border: 1px solid #222222; border-radius: 8px; background-color: #111111;">
-        <h3>📈 Advertising Sales Analysis</h3>
+        <h3> Advertising Sales Analysis</h3>
         <p><font color="#a1a1aa">An analytical data science notebook implementing Multiple Linear Regression from scratch to forecast marketing spend return on investment.</font></p>
         <p>
           <a href="https://github.com/sashank321/advertising-sales-analysis"><code>Code</code></a> &nbsp;•&nbsp;
@@ -142,7 +142,7 @@
     </tr>
     <tr>
       <td width="50%" valign="top" style="border: 1px solid #222222; border-radius: 8px; background-color: #111111;">
-        <h3>☕ Data Structures &amp; Algorithms</h3>
+        <h3> Data Structures &amp; Algorithms</h3>
         <p><font color="#a1a1aa">A comprehensive, dependency-free Java repository featuring manual implementations of trees, graphs, custom hash maps, and priority queues.</font></p>
         <p>
           <a href="https://github.com/sashank321/dsa"><code>Code</code></a> &nbsp;•&nbsp;
@@ -150,7 +150,7 @@
         </p>
       </td>
       <td width="50%" valign="top" style="border: 1px solid #222222; border-radius: 8px; background-color: #111111;">
-        <h3>🤖 Full Stack Projects</h3>
+        <h3> Full Stack Projects</h3>
         <p><font color="#a1a1aa">Various high-performance full-stack web applications deploying robust backends and fast React-driven frontend clients.</font></p>
         <p>
           <a href="https://github.com/sashank321/fullstack-hub"><code>Code</code></a> &nbsp;•&nbsp;
@@ -163,7 +163,7 @@
     </tr>
     <tr>
       <td width="50%" valign="top" style="border: 1px solid #222222; border-radius: 8px; background-color: #111111;">
-        <h3>🧠 AI &amp; ML Experiments</h3>
+        <h3> AI &amp; ML Experiments</h3>
         <p><font color="#a1a1aa">Jupyter Notebooks exploring custom feature engineering, data exploration pipelines, neural architectures, and evaluations.</font></p>
         <p>
           <a href="https://github.com/sashank321/ai-experiments"><code>Code</code></a> &nbsp;•&nbsp;
@@ -171,7 +171,7 @@
         </p>
       </td>
       <td width="50%" valign="top" style="border: 1px solid #222222; border-radius: 8px; background-color: #111111;">
-        <h3>✨ Future Open Source Work</h3>
+        <h3> Future Open Source Work</h3>
         <p><font color="#a1a1aa">Experimental libraries, automation scripts, and tooling designed to simplify developer workflows and systems integrations.</font></p>
         <p>
           <a href="https://github.com/sashank321"><code>Profile</code></a> &nbsp;•&nbsp;
@@ -188,23 +188,7 @@
 </p>
 <br>
 
-<div align="center">
-  <h2>✦ Pinned Repositories ✦</h2>
-  <table border="0" cellpadding="8" cellspacing="0" width="80%">
-    <tr>
-      <td align="left"><b><a href="https://github.com/sashank321/portfolio">portfolio</a></b></td>
-      <td align="right"><font color="#71717a">React • GSAP • TypeScript</font></td>
-    </tr>
-    <tr>
-      <td align="left"><b><a href="https://github.com/sashank321/advertising-sales-analysis">advertising-sales-analysis</a></b></td>
-      <td align="right"><font color="#71717a">Jupyter • Python • ML</font></td>
-    </tr>
-    <tr>
-      <td align="left"><b><a href="https://github.com/sashank321/dsa">dsa</a></b></td>
-      <td align="right"><font color="#71717a">Java • Algorithms</font></td>
-    </tr>
-  </table>
-</div>
+
 
 <br>
 <p align="center">
