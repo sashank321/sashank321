@@ -1,12 +1,35 @@
 <svg width="1200" height="220" viewBox="0 0 1200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="1200" height="220" fill="#0a0a0a"/>
 
-  <!-- Hairline frame (inset inside, so nothing clips) -->
-  <rect x="40" y="40" width="1120" height="140" stroke="#2a2a2a" stroke-width="1" fill="none"/>
+  <!-- Hairline frame, draws via dasharray -->
+  <rect x="40" y="40" width="1120" height="140" stroke="#2a2a2a" stroke-width="1" fill="none"
+        stroke-dasharray="2520" stroke-dashoffset="2520">
+    <animate attributeName="stroke-dashoffset" from="2520" to="0" dur="1.2s" begin="0.2s" fill="freeze"/>
+  </rect>
 
-  <!-- Wordmark -->
-  <text x="600" y="102" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" letter-spacing="8" fill="#9a9a96">SASHANK  &#169;  2026</text>
+  <!-- Wordmark: letter-by-letter rise -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="14" letter-spacing="8" fill="#9a9a96" text-anchor="middle">
+    <text x="455" y="102" opacity="0"><tspan>S</tspan><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" dur="0.4s" begin="0.8s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.8s" fill="freeze"/></text>
+    <text x="478" y="102" opacity="0"><tspan>A</tspan><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" dur="0.4s" begin="0.86s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.86s" fill="freeze"/></text>
+    <text x="500" y="102" opacity="0"><tspan>S</tspan><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" dur="0.4s" begin="0.92s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.92s" fill="freeze"/></text>
+    <text x="523" y="102" opacity="0"><tspan>H</tspan><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" dur="0.4s" begin="0.98s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.98s" fill="freeze"/></text>
+    <text x="546" y="102" opacity="0"><tspan>A</tspan><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" dur="0.4s" begin="1.04s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.04s" fill="freeze"/></text>
+    <text x="569" y="102" opacity="0"><tspan>N</tspan><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" dur="0.4s" begin="1.10s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.10s" fill="freeze"/></text>
+    <text x="592" y="102" opacity="0"><tspan>K</tspan><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" dur="0.4s" begin="1.16s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.16s" fill="freeze"/></text>
+  </g>
+  <text x="700" y="102" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" letter-spacing="8" fill="#9a9a96" opacity="0">
+    &#169;  2026
+    <animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" dur="0.4s" begin="1.5s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.5s" fill="freeze"/>
+  </text>
 
-  <!-- Tagline: the single bone accent -->
-  <text x="600" y="140" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="16" letter-spacing="1" fill="#d6cfc4">Designed with intention. Driven by curiosity.</text>
+  <!-- Tagline types on, blinking cursor -->
+  <text x="600" y="140" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="16" letter-spacing="1" fill="#d6cfc4" opacity="0">
+    Designed with intention. Driven by curiosity.
+    <animate attributeName="opacity" from="0" to="1" dur="0.01s" begin="1.9s" fill="freeze"/>
+  </text>
+  <!-- blinking caret -->
+  <rect x="818" y="127" width="1.5" height="14" fill="#d6cfc4" opacity="0">
+    <animate attributeName="opacity" values="0;1;0;1;0;1;0" keyTimes="0;0.1;0.5;0.6;0.9;0.95;1" dur="1.4s" begin="1.9s" fill="freeze" repeatCount="indefinite"/>
+  </rect>
 </svg>

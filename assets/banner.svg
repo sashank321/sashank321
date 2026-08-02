@@ -1,45 +1,102 @@
 <svg width="1200" height="400" viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Canvas -->
+
+  <!-- ===== Canvas ===== -->
   <rect width="1200" height="400" fill="#0a0a0a"/>
 
-  <!-- Frame: outer hairline -->
-  <rect x="40" y="40" width="1120" height="320" stroke="#2a2a2a" stroke-width="1" fill="none"/>
-  <!-- Frame: corner ticks (registration marks) -->
+  <!-- ===== Outer hairline: draws itself via stroke-dashoffset ===== -->
+  <rect x="40" y="40" width="1120" height="320" stroke="#2a2a2a" stroke-width="1" fill="none"
+        stroke-dasharray="2880" stroke-dashoffset="2880">
+    <animate attributeName="stroke-dashoffset" from="2880" to="0" dur="1.4s" begin="0.2s" fill="freeze"/>
+  </rect>
+
+  <!-- ===== Corner ticks: pop at 0.9s ===== -->
   <g stroke="#6b6b6b" stroke-width="1">
-    <line x1="34" y1="40" x2="46" y2="40"/>
-    <line x1="40" y1="34" x2="40" y2="46"/>
-    <line x1="1154" y1="40" x2="1166" y2="40"/>
-    <line x1="1160" y1="34" x2="1160" y2="46"/>
-    <line x1="34" y1="360" x2="46" y2="360"/>
-    <line x1="40" y1="354" x2="40" y2="366"/>
-    <line x1="1154" y1="360" x2="1166" y2="360"/>
-    <line x1="1160" y1="354" x2="1160" y2="366"/>
+    <line x1="34" y1="40" x2="46" y2="40"/><line x1="40" y1="34" x2="40" y2="46"/>
+    <line x1="1154" y1="40" x2="1166" y2="40"/><line x1="1160" y1="34" x2="1160" y2="46"/>
+    <line x1="34" y1="360" x2="46" y2="360"/><line x1="40" y1="354" x2="40" y2="366"/>
+    <line x1="1154" y1="360" x2="1166" y2="360"/><line x1="1160" y1="354" x2="1160" y2="366"/>
+    <animate attributeName="opacity" from="0" to="1" dur="0.01s" begin="0.9s" fill="freeze"/>
   </g>
 
-  <!-- Top meta row -->
-  <text x="64" y="84" font-family="Georgia, 'Times New Roman', serif" font-size="11" letter-spacing="4" fill="#6b6b6b">PORTFOLIO</text>
-  <text x="1136" y="84" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="11" letter-spacing="4" fill="#6b6b6b">EST. 2026</text>
+  <!-- ===== Top meta row ===== -->
+  <text x="64" y="84" font-family="Georgia, 'Times New Roman', serif" font-size="11" letter-spacing="4" fill="#6b6b6b" opacity="0">
+    PORTFOLIO
+    <animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" dur="0.7s" begin="0.3s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="0.7s" begin="0.3s" fill="freeze"/>
+  </text>
+  <text x="1136" y="84" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="11" letter-spacing="4" fill="#6b6b6b" opacity="0">
+    EST. 2026
+    <animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" dur="0.7s" begin="0.4s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="0.7s" begin="0.4s" fill="freeze"/>
+  </text>
 
-  <!-- Rule under meta -->
-  <line x1="64" y1="100" x2="1136" y2="100" stroke="#2a2a2a" stroke-width="1"/>
+  <!-- ===== Rule under meta ===== -->
+  <line x1="64" y1="100" x2="1136" y2="100" stroke="#2a2a2a" stroke-width="1"
+        stroke-dasharray="1072" stroke-dashoffset="1072">
+    <animate attributeName="stroke-dashoffset" from="1072" to="0" dur="1.0s" begin="0.6s" fill="freeze"/>
+  </line>
 
-  <!-- Name: dominant -->
-  <text x="600" y="212" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="66" letter-spacing="14" fill="#e8e8e6">SASHANK JUNNURU</text>
+  <!-- ===== Name: per-letter rise, 40ms stagger ===== -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="66" letter-spacing="14" fill="#e8e8e6" text-anchor="middle">
+    <text x="316" y="212" opacity="0"><tspan>S</tspan><animateTransform attributeName="transform" type="translate" from="0 26" to="0 0" dur="0.85s" begin="0.50s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.85s" begin="0.50s" fill="freeze"/></text>
+    <text x="363" y="212" opacity="0"><tspan>A</tspan><animateTransform attributeName="transform" type="translate" from="0 26" to="0 0" dur="0.85s" begin="0.54s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.85s" begin="0.54s" fill="freeze"/></text>
+    <text x="410" y="212" opacity="0"><tspan>S</tspan><animateTransform attributeName="transform" type="translate" from="0 26" to="0 0" dur="0.85s" begin="0.58s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.85s" begin="0.58s" fill="freeze"/></text>
+    <text x="457" y="212" opacity="0"><tspan>H</tspan><animateTransform attributeName="transform" type="translate" from="0 26" to="0 0" dur="0.85s" begin="0.62s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.85s" begin="0.62s" fill="freeze"/></text>
+    <text x="504" y="212" opacity="0"><tspan>A</tspan><animateTransform attributeName="transform" type="translate" from="0 26" to="0 0" dur="0.85s" begin="0.66s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.85s" begin="0.66s" fill="freeze"/></text>
+    <text x="551" y="212" opacity="0"><tspan>N</tspan><animateTransform attributeName="transform" type="translate" from="0 26" to="0 0" dur="0.85s" begin="0.70s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.85s" begin="0.70s" fill="freeze"/></text>
+    <text x="598" y="212" opacity="0"><tspan>K</tspan><animateTransform attributeName="transform" type="translate" from="0 26" to="0 0" dur="0.85s" begin="0.74s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.85s" begin="0.74s" fill="freeze"/></text>
+    <!-- gap for J-word: skip two letter widths -->
+    <text x="695" y="212" opacity="0"><tspan>J</tspan><animateTransform attributeName="transform" type="translate" from="0 26" to="0 0" dur="0.85s" begin="0.82s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.85s" begin="0.82s" fill="freeze"/></text>
+    <text x="742" y="212" opacity="0"><tspan>U</tspan><animateTransform attributeName="transform" type="translate" from="0 26" to="0 0" dur="0.85s" begin="0.86s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.85s" begin="0.86s" fill="freeze"/></text>
+    <text x="789" y="212" opacity="0"><tspan>N</tspan><animateTransform attributeName="transform" type="translate" from="0 26" to="0 0" dur="0.85s" begin="0.90s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.85s" begin="0.90s" fill="freeze"/></text>
+    <text x="836" y="212" opacity="0"><tspan>N</tspan><animateTransform attributeName="transform" type="translate" from="0 26" to="0 0" dur="0.85s" begin="0.94s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.85s" begin="0.94s" fill="freeze"/></text>
+    <text x="883" y="212" opacity="0"><tspan>U</tspan><animateTransform attributeName="transform" type="translate" from="0 26" to="0 0" dur="0.85s" begin="0.98s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.85s" begin="0.98s" fill="freeze"/></text>
+    <text x="930" y="212" opacity="0"><tspan>R</tspan><animateTransform attributeName="transform" type="translate" from="0 26" to="0 0" dur="0.85s" begin="1.02s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.85s" begin="1.02s" fill="freeze"/></text>
+    <text x="977" y="212" opacity="0"><tspan>U</tspan><animateTransform attributeName="transform" type="translate" from="0 26" to="0 0" dur="0.85s" begin="1.06s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.85s" begin="1.06s" fill="freeze"/></text>
+  </g>
 
-  <!-- Subtitle caps -->
-  <text x="600" y="252" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" letter-spacing="7" fill="#9a9a96">COMPUTER SCIENCE &#183; KL UNIVERSITY</text>
+  <!-- ===== Subtitle ===== -->
+  <text x="600" y="252" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" letter-spacing="7" fill="#9a9a96" opacity="0">
+    COMPUTER SCIENCE &#183; KL UNIVERSITY
+    <animateTransform attributeName="transform" type="translate" from="0 14" to="0 0" dur="0.8s" begin="1.20s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="1.20s" fill="freeze"/>
+  </text>
 
-  <!-- Divider dot -->
-  <circle cx="600" cy="286" r="1.5" fill="#6b6b6b"/>
+  <!-- ===== Dot ===== -->
+  <circle cx="600" cy="286" r="1.5" fill="#6b6b6b" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.01s" begin="1.40s" fill="freeze"/>
+  </circle>
 
-  <!-- Bottom row: two columns flanking the CGPA number -->
-  <g>
-    <text x="420" y="330" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="11" letter-spacing="3" fill="#6b6b6b">CUMULATIVE</text>
-    <text x="420" y="346" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="11" letter-spacing="3" fill="#6b6b6b">GRADE POINT</text>
+  <!-- ===== Bottom two label columns ===== -->
+  <text x="420" y="330" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="11" letter-spacing="3" fill="#6b6b6b" opacity="0">CUMULATIVE
+    <animateTransform attributeName="transform" type="translate" from="0 12" to="0 0" dur="0.6s" begin="1.55s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="1.55s" fill="freeze"/></text>
+  <text x="420" y="346" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="11" letter-spacing="3" fill="#6b6b6b" opacity="0">GRADE POINT
+    <animateTransform attributeName="transform" type="translate" from="0 12" to="0 0" dur="0.6s" begin="1.60s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="1.60s" fill="freeze"/></text>
+  <text x="780" y="330" font-family="Georgia, 'Times New Roman', serif" font-size="11" letter-spacing="3" fill="#6b6b6b" opacity="0">FULL STACK
+    <animateTransform attributeName="transform" type="translate" from="0 12" to="0 0" dur="0.6s" begin="1.65s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="1.65s" fill="freeze"/></text>
+  <text x="780" y="346" font-family="Georgia, 'Times New Roman', serif" font-size="11" letter-spacing="3" fill="#6b6b6b" opacity="0">&amp; MACHINE LEARNING
+    <animateTransform attributeName="transform" type="translate" from="0 12" to="0 0" dur="0.6s" begin="1.70s" fill="freeze"/><animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="1.70s" fill="freeze"/></text>
 
-    <text x="600" y="344" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="42" letter-spacing="2" fill="#d6cfc4">9.72</text>
-
-    <text x="780" y="330" font-family="Georgia, 'Times New Roman', serif" font-size="11" letter-spacing="3" fill="#6b6b6b">FULL STACK</text>
-    <text x="780" y="346" font-family="Georgia, 'Times New Roman', serif" font-size="11" letter-spacing="3" fill="#6b6b6b">&amp; MACHINE LEARNING</text>
+  <!-- ===== CGPA count-up: 0 → 9.72 via cross-dissolve steps ===== -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="42" letter-spacing="2" fill="#d6cfc4" text-anchor="middle">
+    <text x="600" y="344" opacity="0"><tspan>0</tspan>
+      <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.4;1" dur="0.55s" begin="1.50s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" from="0 6" to="0 0" dur="0.4s" begin="1.50s" fill="freeze"/>
+    </text>
+    <text x="600" y="344" opacity="0"><tspan>3.14</tspan>
+      <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.4;1" dur="0.55s" begin="1.90s" fill="freeze"/>
+    </text>
+    <text x="600" y="344" opacity="0"><tspan>6.28</tspan>
+      <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.4;1" dur="0.55s" begin="2.30s" fill="freeze"/>
+    </text>
+    <text x="600" y="344" opacity="0"><tspan>8.41</tspan>
+      <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.4;1" dur="0.55s" begin="2.70s" fill="freeze"/>
+    </text>
+    <text x="600" y="344" opacity="0"><tspan>9.30</tspan>
+      <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.4;1" dur="0.55s" begin="3.05s" fill="freeze"/>
+    </text>
+    <text x="600" y="344" opacity="0"><tspan>9.72</tspan>
+      <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.35s" fill="freeze"/>
+    </text>
   </g>
 </svg>
